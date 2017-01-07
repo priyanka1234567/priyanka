@@ -1,0 +1,21 @@
+.App {
+  padding: 10px;
+}
+
+h1{
+  color: yellow;
+}
+ p{
+   color: blue;
+ }
+ button.contactbtn,.news,.home,.signup1,.login1,.aboutus{
+   background-color: black;
+   color: white;
+   border: 0;
+   font-size: 20px;
+   border-radius: 12px;
+
+ }
+ button:hover{
+   background-color:dimgray;
+ }
