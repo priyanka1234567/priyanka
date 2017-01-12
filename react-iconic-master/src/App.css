@@ -6,16 +6,16 @@ h1{
   color: yellow;
 }
  p{
-   color: blue;
+   color: white;
  }
- button.contactbtn,.news,.home,.signup1,.login1,.aboutus{
+ /*button.contactbtn,.news,.home,.signup1,.login1,.aboutus{
    background-color: black;
    color: white;
    border: 0;
    font-size: 20px;
    border-radius: 12px;
 
- }
- button:hover{
+ }*/
+button:hover{
    background-color:dimgray;
  }

@@ -1,13 +1,13 @@
 .loginpage{
 
   margin-top: -250px;
-  margin-left: -1px;
+  margin-left: -50px;
   top: 100%;
-  left: 70%;
-  background: url('/images/1234.png');
-  background-size: cover;
-  height: 450px;
+  left: 50%;
+  background: url('/images/login image.jpg');
+  height: 500px;
   width: 50%;
+
 
 
 }

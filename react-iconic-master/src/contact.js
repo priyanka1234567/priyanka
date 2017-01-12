@@ -8,7 +8,7 @@ class contact extends React.Component {
   render(){
 
     return(
-      <div className="contactuspage">
+      <div className="contactuspage w3-container w3-khaki">
       <h1> contact</h1>
       bfjhvgfdb<br/>
       nkghkg<br/>
