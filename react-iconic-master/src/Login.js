@@ -1,66 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Login.css';
-
+import Mapp from './Mapp.js';
 import icons from './icons';
+import Adminpage from './Adminpage.js';
+import App from './App.js';
 
-// Can delete start
-      var TextBox = React.createClass({
-          render: function () {
-              return <div> <input type="text"  enabled="true"/>:&nbsp;&nbsp;
-              <input type="text"  enabled="true"/>
-               </div>;
-          }
-      });
-      var Buttons = React.createClass({
-          render: function () {
-              return <div>
-               </div>;
-          }
-      });
+      class Login extends React.Component {
+    constructor(props) {
+          super(props);
 
-      var Container = React.createClass({
-          getInitialState: function () {
-              return { chatboxes: [] };
-          },
-          renderChatbox: function () {
-              var cbs = this.state.chatboxes;
-              cbs.push(<TextBox />);
-              this.setState({chatboxes: cbs});
-          },
+          this.state={data:'', passwd:'',res:''};
+ this.updateState=this.updateState.bind(this);
+ this.updatePasswd=this.updatePasswd.bind(this);
+ this.validate=this.validate.bind(this);
+       }
+       updateState(e){
+   this.setState({data:e.target.value});
+}
 
-          render: function() {
-              return <div><button className="btn " onClick={this.renderChatbox}>Add feature</button>
+updatePasswd(e){
+  this.setState({passwd:e.target.value});
+}
 
-              {this.state.chatboxes}
-              </div>;
-          }
-      });
-// Can delete end
+validate(username,password){
+  if((username=='')||(password==''))
+  {
+    this.setState({res:"please enter username and password"})
+  }
+  else if((username=='user')&&(password=='123')){
+     this.setState({res:'VALID, Login Successful'});
+     var c=document.getElementById("content");
 
-  class Login extends React.Component {
+     ReactDOM.render(<Mapp uname={this.state.data}/>,c);
+   }
+   else if((username=='admin')&&(password=='123')){
+      this.setState({res:'VALID, Login Successful'});
+      var c=document.getElementById("content");
 
+      ReactDOM.render(<Adminpage/>,c);
+    }
+  else {
+    var l=username.length;
+    if(l<5)
 
-      addInputField(e){
-          e.preventDefault();
-
-          /* get element */
-          var button = e.target;
-          /* Get parent */
-          var parentEle = button.parentElement.parentElement;
-
-          /* Create text box */
-          var input = document.createElement('input');
-          input.type = "button";
-          input.value="ok";
+     this.setState({res:'Invalid Username and Password'});
+  }
+}
 
 
-          /* add to div */
-          parentEle.appendChild(input);
-          document.getElementById("ab").appendChild(input);
-
-
-        }
 
 
 //to call addinput field function
@@ -68,19 +56,19 @@ import icons from './icons';
   render(){
 
     return(
-      <div className="loginpage w3-center w3-animate-top">
+      <div className="signup w3-center w3-animate-top">
       <center>
       <br/>  <br/><br/> <br/>
-      
+
           <h1 id="title" >Login</h1>
             <br/>
-            <input type="text" className="w3-input" placeholder="username"/><br/><br/>
-             <input type="password" className="w3-input" placeholder="password"/><br/><br/>
-            <Container name="World" />
-            <button className="btn btn-success " onClick={this.addInputField}>Add Input</button>
-            <div id="ab" className="w3-container"></div>
+            <p>{this.state.res}</p>
+            <input type="text" id="username" value = {this.state.data} onChange = {this.updateState} className="w3-input" placeholder="username"  /><br/><br/>
+             <input type="password" value ={this.state.passwd} onChange = {this.updatePasswd} className="w3-input" placeholder="password"/><br/><br/>
 
-           <button className="loginbtn btn-success" bsStyle="primary">login</button>
+
+            <button  className="w3-btn w3-round-large w3-large" onClick={()=>this.validate(this.state.data,this.state.passwd)}>Login</button>
+
            <br/>
            <br/>
 

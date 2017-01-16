@@ -14,6 +14,14 @@ class App extends Component {
   {
     this.props.history.pushState(null,"/")
     }
+    constructor(props)
+    {
+      super(props);
+      this.state={
+
+      }
+    };
+
 
   // `render` is called whenever the component's props OR state are updated.
   render() {
@@ -21,7 +29,7 @@ class App extends Component {
 
     return (
 
-      <div className="App w3-container ">
+      <div id="App" className="App w3-container ">
       <Survey/>
       <ul id="navigation w3-container w3-ul">
 
@@ -45,10 +53,8 @@ class App extends Component {
             </li>
             &nbsp;  &nbsp;
 
-            <li>
-              <Link to="abc"><button className="abc w3-btn w3-round-large  w3-large">perform Survey</button></Link>
-            </li>
-              &nbsp;  &nbsp;
+
+
 
             &nbsp;  &nbsp;
             <li className="signup1">
@@ -62,8 +68,9 @@ class App extends Component {
             </li>
             &nbsp;  &nbsp;
         </ul>
-      <div className="content w3-container w3-center w3-section ">
+      <div id="content" className="content w3-container w3-center  ">
          {this.props.children}
+
       </div>
 
 

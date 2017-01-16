@@ -8,10 +8,10 @@ module.exports = {
     javascript: './index.js',
     html: __dirname + '/public/index.html',
   },
-  output: {
-    filename: './bundle.js',
-    path: __dirname + '/build',
-  },
+ // output: {
+ //   filename: './bundle.js',
+ //   path: __dirname + '/build',
+ // },
   module: {
     loaders: [
       {

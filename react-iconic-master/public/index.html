@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2fgI8v3-pjcX-Mz-pNw-SjuhA-D1Cjq8"></script>
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<link rel="stylesheet" href="w3.css">
+<script src="../lib/jquery.js"></script>
+<script src="../dist/jquery.validate.js"></script>
   <head>
     <meta charset="utf-8">
     <title>survey tool</title>
@@ -36,6 +38,13 @@
       font-size: 20px;
 
     }
+    .Mapp,.Adminpage
+    {
+      margin-top: -250px;
+      margin-left: -50px;
+      top: 100%;
+      left: 50%;
+    }
 
     ul.navigation {
       background-color: black;
@@ -46,9 +55,10 @@
     ul li.login11{float: right;}
 
     .content {
+      padding:25%;
 
-
-
+    }
+    #content {
       padding:25%;
 
     }
@@ -83,7 +93,7 @@
 
 
 
-    <div id="root" className="w3-container w3-margin-0"></div>
+    <div id="root" className="w3-container w3-margin-0"  ></div>
   </body>
   <script src="./bundle.js"></script>
 </html>
